@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Download the latest version of BES Client and imports it into Munki. NOTE: This version is universal but will only run on macOS 11 and newer.</string>
+    <key>Identifier</key>
+    <string>com.github.joshua-d-miller.autopkg.munki.bigfixclient</string>
+    <key>Input</key>
+    <dict>
+        <key>MUNKI_REPO_SUBDIR</key>
+        <string>apps/bigfix</string>
+        <key>NAME</key>
+        <string>HCL BigFix</string>
+        <key>MUNKI_CATEGORY</key>
+        <string>Security</string>
+        <key>MUNKI_DEVELOPER</key>
+        <string>HCL</string>
+    	<key>pkginfo</key>
+    	<dict>
+    		<key>catalogs</key>
+    		<array>
+    			<string>testing</string>
+    		</array>
+            <key>category</key>
+            <string>%MUNKI_CATEGORY%</string>
+            <key>developer</key>
+            <string>%MUNKI_DEVELOPER%</string>
+            <key>display_name</key>
+            <string>%NAME%</string>
+    		<key>description</key>
+    		<string>HCL BigFix - A powerful, cross-platform systems management suite for remotely managing and monitoring workstations. BigFix is designed to save IT staff time and licensing costs by maintaining a single BigFix infrastructure centrally for all areas.</string>
+    		<key>name</key>
+    		<string>%NAME%</string>
+            <key>display_name</key>
+            <string>%NAME%</string>
+            <key>unattended_install</key>
+            <true/>
+            <key>minimum_os_version</key>
+            <string>11.0.0</string>
+    	</dict>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>2.0.0</string>
+    <key>ParentRecipe</key>
+    <string>com.github.joshua-d-miller.download.bigfixclient</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>pkg_path</key>
+                <string>%pathname%</string>
+                <key>repo_subdirectory</key>
+                <string>%MUNKI_REPO_SUBDIR%</string>
+            </dict>
+            <key>Processor</key>
+            <string>MunkiImporter</string>
+        </dict>
+    </array>
+</dict>
+</plist>
