@@ -10,6 +10,8 @@
     <dict>
         <key>NAME</key>
         <string>Silhouette Studio</string>
+        <key>USER_AGENT</key>
+        <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.2 Safari/605.1.15</string>
     </dict>
     <key>MinimumVersion</key>
     <string>2.0.0</string>
@@ -21,11 +23,16 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>href="\/\/(dl\.silhcdn\.com\/\S*)">Mac \(64-bit\)</string>
+				<string>href="\/\/(dl\.silhcdn\.com\/\S*)"</string>
 				<key>result_output_var_name</key>
 				<string>match</string>
+        <key>request_headers</key>
+        <dict>
+                <key>user-agent</key>
+                <string>%USER_AGENT%</string>
+        </dict>
 				<key>url</key>
-				<string>https://www.silhouetteamerica.com/software</string>
+				<string>https://www.silhouetteamerica.com/software/ss/download</string>
 			</dict>
 		</dict>
         <dict>
@@ -35,6 +42,11 @@
             <dict>
                 <key>url</key>
                 <string>https://%match%</string>
+                <key>request_headers</key>
+                <dict>
+                        <key>user-agent</key>
+                        <string>%USER_AGENT%</string>
+                </dict>
                 <key>filename</key>
                 <string>%NAME%.dmg</string>
             </dict>
