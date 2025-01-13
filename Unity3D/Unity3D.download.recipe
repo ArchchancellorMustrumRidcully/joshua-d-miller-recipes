@@ -8,8 +8,10 @@
         <string>Unity 3D</string>
         <key>ARCH</key>
         <string></string>
+		<key>ARCH_SUPPORTED</key>
+        <string>x86_64</string>
         <key>RELEASE_YEAR</key>
-        <string>2023</string>
+        <string>6000</string>
     </dict>
     <key>Description</key>
     <string>Downloads the latest version of Unity 3D Editor for Macs.
@@ -44,7 +46,7 @@ Possible values for "ARCH":
             <key>url</key>
             <string>%DOWNLOAD_URL%</string>
             <key>filename</key>
-            <string>%NAME%.pkg</string>
+            <string>%NAME%-%ARCH_SUPPORTED%.pkg</string>
         </dict>
     </dict>
     <dict>
